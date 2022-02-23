@@ -5,11 +5,11 @@ javascript: (function () {
 	const titleElement = document.querySelectorAll(titleSelector)[0];
 	const ticketNumberElement = document.querySelectorAll(ticketNumberSelector)[0];
 
-	const getLinkText = () => `${ticketNumberElement.innerText} ${titleElement.innerText}`;
+	const getLinkText = `${ticketNumberElement.innerText} ${titleElement.innerText}`;
 
 	const copyJiraTicketToClipboard = () => {
 		const copiedLinkElement = ticketNumberElement.cloneNode(true);
-		copiedLinkElement.textContent = getLinkText();
+		copiedLinkElement.textContent = getLinkText;
 
 		const clipboardItem = new ClipboardItem({
 			"text/plain": new Blob(
